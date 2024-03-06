@@ -10,4 +10,6 @@ int main(){
 	n.Add(15);
 	n.Sort();
 	n.Print();
+	while(n.Add(99));
+	n.Print();
 }
