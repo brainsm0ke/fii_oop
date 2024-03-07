@@ -1,4 +1,5 @@
 #include "Student.h"
+#include "GlobalFunctions.h"
 #include <iostream>
 
 int main() {
@@ -13,5 +14,17 @@ int main() {
 	std::cout << s.getMathGrade() << ' ';
 	std::cout << s.getEnglishGrade() << ' ';
 	std::cout << s.getHistoryGrade() << " \n";
-	std::cout << s.AvgGrade();
+	std::cout << s.AvgGrade() << '\n';
+
+	Student s2;
+	s2.setName("Maslinescu Marius");
+	s2.setMathGrade(8.0f);
+	s2.setEnglishGrade(6.5f);
+	s2.setHistoryGrade(7.5f);
+
+	std::cout << compareNames(s,s2) << ' '
+		<< compareMathGrades(s,s2) << ' '
+		<< compareEnglishGrades(s,s2) << ' '
+		<< compareHistoryGrades(s,s2) << ' '
+		<< compareAvgGrades(s,s2);
 }
