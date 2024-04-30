@@ -17,6 +17,5 @@ int main()
     {
         printf("Index:%d, Key=%d, Value=%s\n", index, key, value);
     }
-    Map<int ,const char*> sub;
     return 0;
 }
