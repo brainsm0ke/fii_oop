@@ -6,8 +6,8 @@
 
 class date {
 	public:
-		uint8_t day : 5;
-		uint8_t month : 4;
+		uint32_t day : 5;
+		uint32_t month : 4;
 		uint32_t year : 23;
 };
 
@@ -85,5 +85,11 @@ int main(){
 	AddressBook book;
 	book.addContact(&robert);
 	book.addContact(&guy);
-	std::cout << dynamic_cast<Acquaintance*>(book.searchByName("Guy"))->phoneNumber;
+	book.deleteByName("Guy");
+	if(book.searchByName("Guy") != nullptr) std::cout << "Eroare!\n";
+	auto friends = book.listOfFriends();
+	std::cout << friends[0]->address << '\n'
+		<< friends[0]->dateOfBirth.day << '.'
+		<< friends[0]->dateOfBirth.month << '.'
+		<< friends[0]->dateOfBirth.year << '\n';
 }
